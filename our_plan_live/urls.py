@@ -19,7 +19,9 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-	url(r'^party/?$', views.party), 
+    url(r'^load/?$', views.load), 
+    url(r'^save/?$', views.save),
+    url(r'^party/?$', views.party), 
 	url(r'^retreat/?$', views.simple_page('retreat.html')), 
     path('admin/', admin.site.urls),
     path('', views.main),

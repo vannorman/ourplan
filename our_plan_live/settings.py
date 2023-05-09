@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static'),
-  '/Users/mana/website/manaretreatcenter/static/',
+  '/Users/mana/website/ourplan.live/static/',
 )
 APPEND_SLASH = False
 import our_plan_live.local_settings
