@@ -1,0 +1,594 @@
+html {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    width:100%;
+    max-width:100%;
+    top:0;left:0;
+}
+
+body {
+    position:relative;
+    font-family:Nunito;
+    margin:0;padding:0;
+    overflow-x:hidden;
+}
+
+#top, #top2 {
+    position:relative;
+    height:70px;
+    background-color: #598a71;
+}
+
+#title {
+    position:absolute; left:60px;top:8px;
+    font-family:proximaNova;
+    font-size:40px;
+    color:white;
+}
+
+
+#pic {
+    background-image:url(/static/img/top.jpg);background-size:cover;background-repeat:no-repeat;
+    background-position:center; 
+    position:relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:408px;
+    z-index:-2;
+}
+#top2 { 
+    height:auto;
+    text-align:center;
+    background-color:white;
+    top:60px;
+    }
+#top2 .item {
+    display:inline-block;
+    position:relative;
+    margin: 0 2%;
+    width:150px;
+    height:150px; 
+    border:2px solid #444;
+    border-radius:50%;
+    top:5px;
+    vertical-align: middle;
+    text-align:center;
+    font-size:1.2em;
+    background-size:cover;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    transition:all 0.25s;
+    background-position-x:50%;
+}
+#top2 .item:hover{
+    cursor:pointer;
+    transform: scale(103%);
+    background-color:#0004;
+}
+#top2 .bg {
+    position:absolute;
+    width:150px;
+    height:35px;
+    z-index:0;
+}
+
+#top2 .food {
+    background-image:url(/static/img/btn_food.jpg);
+}
+#top2 .perm {
+    background-image:url(/static/img/btn_perm.jpg);
+}
+#top2 .retreat {
+    background-image:url(/static/img/btn_retreat.jpg);
+}
+#top2 .tech {
+    background-image:url(/static/img/tech.jpg);
+}
+
+
+#top2 .item .text{
+    position:absolute;
+    display:flex;justify-content:center;align-items:center;width:100%;height:100%;
+    color:white;
+    font-weight:bold;
+    z-index:2;
+    background-color:#0005;
+    transition:all 0.4s;
+}
+#top2 .item .text:hover{ background-color:#0009}
+#btnDesc, #old {
+    padding:35px;
+    position:absolute;
+
+}
+#btns {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding:30px;
+    height: 190px;
+    width: 660px;
+    border-radius: 25px;
+    border: 3px solid gray;
+    font-size: 1.89em;
+    text-align: center;
+    }
+#swoop { 
+    background-image:url('/static/img/wave-haikei.svg'); background-size:cover;background-position:0% 10%; 
+    width:100%; height:360px; position:absolute; top:0;left:0;
+    z-index:-1;
+}
+
+#title .sub { font-size:18px; font-family:proximaNova}
+
+#topSpacer { position:relative;height:300px;}
+
+#fold1 {
+    width:100%;
+    position:relative;
+    top:0;
+    text-align:center;
+}
+
+#brief 
+{
+    display:inline-block;
+    text-align: justify;
+  text-justify: inter-word;
+    width:700px;
+  top:0;
+   position:relative;
+    font-size:1.5em;
+    margin:0 auto;
+}
+#brief h3 {margin-top:60px;}
+
+#map {
+   position:relative;
+   top:40px;
+    width: 80vw;
+    height:48vw;
+    display:block;
+    margin:0 auto;
+    background-image:url('/static/img/map.jpg'); 
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+#map::after{
+    clear:both
+}
+#mapDesc {
+display:block;
+text-align:center;
+    font-size:1.2em;
+    position:relative;
+    margin:0 auto;
+}
+
+.title {
+    font-size:2.3em;
+    position:relative;
+    top:40px;
+    font-family:proximaNova;
+    
+}
+.title2 {
+    font-size:2.5em;
+    position:relative;
+    margin-top:120px;
+    font-family:proximaNova;
+    text-align:center;
+    height:55px;    
+}
+
+#faq {
+    position:relative;
+    width:600px;
+    margin:0 auto;
+    font-size:1.1em;
+}
+#faq h1{ text-align:center; font-size:2.5em;font-weight:bold;}
+
+#team {
+    position:relative; 
+    top: 50px; left:0;
+    width:100%;
+    margin:0 auto; 
+    padding:15px;
+    text-align:center; 
+}
+
+
+#team .member {
+    vertical-align:top;
+    margin: 10px;
+    display: inline-block;
+    width:190px;
+    height:320px;
+    outline:1px dotted gray;
+}
+#team .member img { width:150px;height:150px;border-radius:125px;margin:15px auto 0 auto;}
+
+
+
+@font-face {
+    font-family: proximaNova;
+    src: url(/static/fonts/proximaNovaFlower-Regular.ttf);
+}
+@font-face {
+    font-family: proximaNova;
+    src: url(/static/fonts/ProximaNova-SemiBold.otf);
+
+}
+
+@font-face {
+    font-family: proximaNovaBlack;
+    src: url(/static/fonts/ProximaNova-Black.ttf);
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('/static/fonts/Nunito-Regular.ttf');
+}
+@font-face {
+    font-family: NunitoBold;
+    src: url('/static/fonts/Nunito-Bold.ttf');
+}
+
+/* MOSAIC from https://medium.com/@axel/mosaic-layouts-with-css-grid-d13f4e3ed2ae */
+
+.container{
+    top:50px;
+    position:relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.tile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile:nth-child(1){
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.tile:nth-child(2),
+.tile:nth-child(3){
+    grid-column: span 2;
+}
+
+.tile:nth-child(4),
+.tile:nth-child(5){
+    grid-column: span 3;
+}
+.apply
+{
+
+	border-radius: 40px;
+  box-sizing: border-box;
+	color: #34b4eb;
+	display: block;
+	font-size:1.2em;
+    height: 80px;
+	letter-spacing: 1px;
+	margin: 0 auto;
+	padding: 4px;
+	position: relative;
+  text-decoration: none;
+	text-transform: uppercase;
+	width: 264px;
+	z-index: 2;
+    transition: all 0.4s;
+    
+}
+
+.apply:hover {
+background-color: #34b4eb; 
+color:white;
+cursor:pointer;
+}
+.booknow {
+    margin:0 auto;
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:40px;
+   -webkit-border-radius: 40px;
+     -khtml-border-radius: 40px;
+       -moz-border-radius: 40px;
+            border-radius: 40px;
+    border: 3px solid #fff;
+    overflow: hidden;
+    width: 220px;
+    height:65px;
+    line-height:65px;
+    font-size:1.3em;
+    border: 2px solid black;
+}
+
+.teacher {
+   font-size:1em;
+   width:250px;
+   height:50px;
+   line-height:50px;
+   margin-bottom:20px;
+}
+
+.booknow a {    
+    display:block;
+    text-decoration: none;
+	background-color: #34b4eb;
+    color:white;
+    transition: all 0.3s;
+}
+
+.teacher a {
+   background-color: #2acc2a; 
+}
+
+
+.booknow a:hover {
+    background-color:#55f;
+}
+
+.teacher a:hover {
+   background-color: #009900; 
+}
+
+.yogaBox {
+    border:1px dotted #444; 
+    width:400px;margin:0 auto;
+    padding-top:20px; 
+    margin-bottom:30px;
+    text-align:center;
+    font-family:NunitoBold;
+    font-size:1.2em;
+}
+
+#pricing {
+    margin:0 auto;
+    width:760px;
+    position:relative;
+    text-align:center;
+}
+#pricing .note { font-size:1.2em;}
+
+#pricing .item {
+    display:inline-block;
+    width:370px;
+    height:180px;
+    border: 1px solid black;
+    overflow:auto;
+    vertical-align:middle;
+    margin-bottom:4px;
+    text-align:left;
+}
+
+#pricing .pic
+{
+    float:left;
+    vertical-align:middle;
+    margin-top:20px;
+    width:100px;
+    height:100px;
+    background-size:cover;
+    opacity:0.5; 
+}
+
+#pricing .desc
+{
+    width:250px;
+    margin-right:20px;
+    float:right;
+}
+
+#pricing h3 { 
+    text-indent:0;
+}
+
+#footer {
+    height:100px;
+    font-size:1.5em;
+    text-align:center;
+    margin:-15px;
+    margin-top:40px;
+    padding-bottom:80px;
+    border-bottom:80px solid gray;
+}
+
+#opps {
+    position:relative;
+    margin:0 auto;
+    text-align:center;
+    top:100px;
+    font-size:1em;
+}
+
+#opps ul {
+    left:30px;
+    position:relative;
+    text-align:left;
+}
+
+
+.opp {
+    display:inline-block;
+    vertical-align: top;
+    width:370px;
+    height:320px;
+    margin:20px;
+    margin-bottom:20px;
+    border:1px solid #777;
+    font-size:1.2em;
+    box-shadow: 10px 5px 5px #aaa;
+    border-radius:25px;
+}
+
+#vid {
+    height:70vh;
+    overflow:hidden;
+}
+
+#videoPlay {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 70vh;
+    background-image:url(/static/img/play.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    pointer-events:none;
+    opacity:0.5;
+}
+#videoCover {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 70vh;
+    background: repeating-linear-gradient( #777a, #777a 2px, #0000 2px, #0000 4px );
+    pointer-events:none;
+}
+
+
+#mana {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 40px;
+    background-color: blue;
+    border-radius: 20px;
+    margin-top: 40px;
+    color:white;
+    line-height:1.6em;
+    font-size:1.5em;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8fb6d6+0,2989d8+18,2989d8+66,155c96+100 */
+background: #8fb6d6; /* Old browsers */
+background: -moz-linear-gradient(top,  #8fb6d6 0%, #2989d8 18%, #2989d8 66%, #155c96 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #8fb6d6 0%,#2989d8 18%,#2989d8 66%,#155c96 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #8fb6d6 0%,#2989d8 18%,#2989d8 66%,#155c96 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fb6d6', endColorstr='#155c96',GradientType=0 ); /* IE6-9 */
+    transition:0.3;
+}
+#mana:hover {
+    cursor:pointer;
+    opacity:0.8;
+}
+
+#carousel{ 
+    width:100%; height:600px; 
+    position: relative;
+    margin-top: 80px;
+    text-align:center;
+}
+#carousel .image{
+    width:80vw;
+    display:inline-block;
+    margin: 0 auto;
+    position:relative;
+    height:60vh;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+#carousel .navLeft {
+    display:inline-block;
+    position:relative;
+    font-size:3em;
+    top:-180px;
+    margin:0 auto;
+}
+#carousel .navLeft:hover, #carousel .navRight:hover{
+    cursor:pointer;
+    opacity:0.8;
+}
+#carousel .navRight{
+    display:inline-block;
+    position:relative;
+    top:-180px;
+    margin: 0 auto;
+    font-size:3em;
+}
+#carousel .image::after:hover {
+    cursor:pointer;
+}
+#under {
+    text-align:center;
+    vertical-align:top;
+    letter-spacing: -3px;
+    word-spacing: -3px;
+}
+
+
+#under .thumbsContainer {
+    display:inline-block;
+    width:60vw;
+    max-width:60vw;
+    white-space: nowrap;
+    overflow:hidden;
+}
+#under .thumbs {
+    width:auto;
+    
+}
+#under .left, #under .right{ 
+    display:inline-block; width:15vw; height: 15vw; 
+        line-height: 1.5em;
+    font-size: 5em;
+    vertical-align: top;
+}
+.thumbsContainer .thumb { 
+    display:inline-block;
+    position:relative;
+    width:15vw;
+    height:15vw;
+    background-size:cover;
+    background-position:center;
+
+}
+.thumbsContainer .thumb:hover, #under .left:hover, #under .right:hover { 
+    cursor:pointer;
+    opacity:0.8;
+}
+
+
+@media screen and (max-width: 850px){
+    #btnDesc, #old {
+        width:70%;
+        font-size:0.8em;
+    }
+    #btns {
+        width:80%;
+    }
+    #brief {
+        width:75%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    #btnDesc, #old {
+        width:70%;
+        font-size:0.6em;
+    }
+    #btns {
+        width:80%;
+    }
+    #brief {
+        width:75%;
+    }
+}
+
+
