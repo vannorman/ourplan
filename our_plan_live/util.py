@@ -1,5 +1,6 @@
 #TODO https://github.com/sdispater/pendulum -- python datetimes made easy
 
+import os
 import sys
 import json
 import threading
@@ -26,17 +27,20 @@ from django.utils.encoding import smart_str
 import sqlite3
 
 def create_or_open_db(db_file):
+    #try:
     conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        cur = conn.cursor()
-        cur.execute('''CREATE TABLE IF NOT EXISTS users
-                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                      first_name TEXT,
-                      last_name TEXT);''')
-        conn.commit()
-    except Error as e:
-        print(e)
+
+    # define the path to the database file
+    db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), db_file)
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute('''CREATE TABLE IF NOT EXISTS users
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  first_name TEXT,
+                  last_name TEXT);''')
+    conn.commit()
+#    except:
+#        print(e)
 
     return conn
 

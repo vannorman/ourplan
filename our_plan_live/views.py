@@ -42,19 +42,18 @@ def load(request):
 def save(request):
     # We need to save whatever data the user entered into SQLite
     if request.method == "POST": #and request.headers.get("contentType": "application/json"):
-        try:
-            data = json.loads(request.POST.get('data'))
-            # print(data['first_name'])
-            conn = create_or_open_db(db_file)
-            cur = conn.cursor()
-            cur.execute("INSERT INTO users (first_name, last_name) VALUES (?, ?)", (data['first_name'],data['last_name']) )
-            conn.commit()
-            conn.close()
-            success=True
-            
+        data = json.loads(request.POST.get('data'))
+        # print(data['first_name'])
+        conn = create_or_open_db(db_file)
+        cur = conn.cursor()
+        cur.execute("INSERT INTO users (first_name, last_name) VALUES (?, ?)", (data['first_name'],data['last_name']) )
+        conn.commit()
+        conn.close()
+        success=True
+        
             # put the data into sqlite
-        except:
-            success=False
+#        except:
+#            success=False
         
         return JsonResponse({
             'success':success,
