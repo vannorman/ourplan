@@ -23,6 +23,22 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from django.utils.encoding import smart_str
+import sqlite3
+
+def create_or_open_db(db_file):
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        cur = conn.cursor()
+        cur.execute('''CREATE TABLE IF NOT EXISTS users
+                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      first_name TEXT,
+                      last_name TEXT);''')
+        conn.commit()
+    except Error as e:
+        print(e)
+
+    return conn
 
 # from our_plan_live.models import *
 # from our_plan_live.forms import *

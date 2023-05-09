@@ -1,11 +1,9 @@
 $(document).ready(function(){
     $('#load').on('click',function(){
-        alert('load:');
         ajax.Load();
     })
     $('#save').on('click',function(e){
          e.preventDefault();
-        alert('save:');
         ajax.Save();
     });
 
@@ -19,18 +17,14 @@ var ajax ={
                 "X-CSRFToken" : csrf
             },
             success: function (e) {
-                console.log('settings load returned:');
-                let data = JSON.parse(e.data);
+//                let data = JSON.parse(e.data);
+                let users = e.users; 
+                $('#loaded').text(users); 
                 console.log(data)
 
             },
             error: function (e) {
-                console.log("Load settings error:"+JSON.stringify(e));
-            }
-        });
-        $('html').on(Input.end, function(){
-            if (Menu.settingsShown){
-                Settings.SaveSettings();
+                console.log("error:"+JSON.stringify(e));
             }
         });
 
@@ -39,8 +33,9 @@ var ajax ={
     Save(){
         console.log("save??");
         data = {
-           settings : JSON.stringify({
-               name : $('#fname').val(),
+           data : JSON.stringify({
+               first_name : $('#fname').val(),
+               last_name : $('#lname').val(),
             })
         }
         $.ajax({
