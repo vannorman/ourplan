@@ -8,4 +8,5 @@ venv/
 /venv
 error.log
 push.sh
+ourplan.db
 
