@@ -19,8 +19,9 @@ var ajax ={
             success: function (e) {
 //                let data = JSON.parse(e.data);
                 let users = e.users; 
-                $('#loaded').text(users); 
-                console.log(data)
+                let trips = e.trips;
+                $('#loaded').text(users+" and TRIPS:"+trips); 
+                // console.log(data)
 
             },
             error: function (e) {
@@ -36,6 +37,7 @@ var ajax ={
            data : JSON.stringify({
                first_name : $('#fname').val(),
                last_name : $('#lname').val(),
+               date : $('#date').val(),
             })
         }
         $.ajax({

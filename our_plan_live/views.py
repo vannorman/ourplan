@@ -32,10 +32,14 @@ def load(request):
         cursor = conn.execute("SELECT * FROM users;")
         users = cursor.fetchall()
         users_string = "\n".join([str(user) for user in users])
+        cursor = conn.execute("SELECT * FROM trips;")
+        trips = cursor.fetchall()
+        trips_string = "\n".join([str(trip) for trip in trips])
         success = True
         return JsonResponse({
             'success':success,
             'users':users_string,
+            'trips':trips_string,
 #            'data':json.dumps(data)
             })
 
@@ -47,6 +51,21 @@ def save(request):
         conn = create_or_open_db(db_file)
         cur = conn.cursor()
         cur.execute("INSERT INTO users (first_name, last_name) VALUES (?, ?)", (data['first_name'],data['last_name']) )
+        cur.execute("INSERT INTO trips (date) VALUES (?)", (data['date'],) )
+
+        # create a cursor object
+        cursor = conn.cursor()
+
+        # define a SQL statement with placeholders
+        sql = "INSERT INTO users (first_name, last_name) VALUES (?, ?)"
+
+        # define a tuple of values to insert
+        values = ('John', 'Doe')
+
+        # execute the SQL statement with the tuple of values
+        cursor.execute(sql, values)
+
+
         conn.commit()
         conn.close()
         success=True
