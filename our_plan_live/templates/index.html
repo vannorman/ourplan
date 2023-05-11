@@ -5,20 +5,52 @@
 <title> Our Plan</title>
 <link rel="shortcut icon" type="image/png" href="/static/img/sun.png">
 <link rel="stylesheet" href="/static/css/index.css?{{ now  }}" />
-hi
-<form>
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="text" id="date" name="date" value="Feb 3"><br><br>
-  <input id="save" type="submit" value="Submit">
-</form>
+<div id="menu">
+    <label for="startDate">Start Date:</label>
+    <input name="startDate" id="startDate" type="number" value="1" min="1" />
+    
+    <table>
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody id="cities">
+        <tr>
+          <td><button class="deleteCity">Remove</button></td>
+          <td><input type="text" class="city" /></td>
+          <td>
+            <input class="numDays" type="number" value="1" min="1" />
+          </td>
+        </tr>
 
-<button id="load"> Load </button>
-<div id="loaded" style="border:1px solid black;width:200px;height:30px;">utest</div>
+      </tbody>
+    </table>
+
+    <button id="addCity" value="Add city"> Add City </button>
+
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="text" id="date" name="date" value="Feb 3"><br><br>
+      <input id="save" type="submit" value="Submit">
+    </form>
+
+    <button id="load"> Load </button>
+
+
+    <div id="loaded" style="border:1px solid black;width:200px;height:30px;">utest</div>
+</div>
+<div class="container"></div>
+<div id="menu"></div>
+
 <script> const csrf = "{{ csrf }}" </script>
 <script src="/static/js/jquery-min.js"></script>
 <script src="/static/js/main.js"></script>
+
 </body>
 </html>
+
