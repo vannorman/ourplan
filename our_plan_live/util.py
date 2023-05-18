@@ -36,12 +36,11 @@ def create_or_open_db(db_file):
     cur = conn.cursor()
     cur.execute('''CREATE TABLE IF NOT EXISTS users
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  first_name TEXT,
-                  last_name TEXT);''')
+                  username TEXT);''')
     cur.execute('''CREATE TABLE IF NOT EXISTS trips
                      (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                      destination TEXT,
-                      date TEXT,
+                      trip_name TEXT,
+                      trip_json TEXT,
                       user_id INTEGER,
                       FOREIGN KEY(user_id) REFERENCES users(id));''')
     conn.commit()

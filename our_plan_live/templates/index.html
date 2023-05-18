@@ -6,8 +6,14 @@
 <link rel="shortcut icon" type="image/png" href="/static/img/sun.png">
 <link rel="stylesheet" href="/static/css/index.css?{{ now  }}" />
 <div id="menu">
+    <label for="tripName">Trip Name:</label>
+    <input id="tripName" type="text" value="My Trip" />
+    <br />
+    <br />
     <label for="startDate">Start Date:</label>
-    <input name="startDate" id="startDate" type="number" value="1" min="1" />
+    <input id="startDate" type="number" value="1" min="1" />
+    <br />
+    <br />
     
     <table>
       <thead>
@@ -29,15 +35,12 @@
     </table>
 
     <button id="addCity" value="Add city"> Add City </button>
+    <br />
+    <br />
 
-    <form>
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
-      <input type="text" id="date" name="date" value="Feb 3"><br><br>
-      <input id="save" type="submit" value="Submit">
-    </form>
+
+
+    <button id="save"> Save </button>
 
     <button id="load"> Load </button>
 
