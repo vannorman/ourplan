@@ -15,7 +15,7 @@ body {
 }
 
 
-.container {
+.calendar {
   display: flex;
   flex-wrap: wrap;
   width: 70vw;
@@ -24,7 +24,7 @@ body {
 
 .box {
   width: calc(100% / 7); /* Set the width to occupy 1/7th of the container */
-  height: 100px; /* Set the desired height */
+  height:100px;
   background-color: #e0e0e0;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -54,6 +54,7 @@ content: "";
 #menu {
     position:fixed;
     right:0;
+    top:0;
     width:30vw;
 }
 

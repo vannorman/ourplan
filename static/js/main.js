@@ -48,17 +48,12 @@ var ajax ={
                 "X-CSRFToken" : csrf
             },
             success: function (e) {
-//                let data = JSON.parse(e.data);
-//                let users = e.users; 
                 let tripJson = JSON.parse(e.trip_json);
                 $('#loaded').text(tripJson); 
                 console.log(tripJson);
                 trip = tripJson;
                 UpdateTripInputs(trip);
-
                 UpdateCalendar();
-                
-
             },
             error: function (e) {
                 console.log("error:"+JSON.stringify(e));
@@ -84,7 +79,6 @@ var ajax ={
             data : data,
             success: function (e) {
                   console.log('settings save success:'+JSON.stringify(e).trim(0,200));
-
             },
             error: function (e) {
                 console.log("setting save err: "+ JSON.stringify(e).trim(0,200));
@@ -100,7 +94,7 @@ var ajax ={
 document.addEventListener("DOMContentLoaded", function() {
 
   for (var i = 1; i < 30; i++) {
-    $('.container').append($('<div class="box" id="box'+i+'"><div class="num">'+i+'</div><div class="city"></div></div>'));
+    $('.calendar').append($('<div class="box" id="box'+i+'"><div class="num">'+i+'</div><div class="city"></div></div>'));
   }
 });
 
